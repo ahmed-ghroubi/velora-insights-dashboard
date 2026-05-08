@@ -62,5 +62,5 @@ retail-sales-dashboard/
 ├──  login-image.jpg
 │
 └── 
-     login-page.png
- dashboard-page.png
+│   login-page.png
+│   dashboard.png
