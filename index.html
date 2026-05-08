@@ -1,0 +1,230 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Velora Insights Dashboard</title>
+  <link rel="stylesheet" href="src/style.css" />
+</head>
+<body>
+
+  <!-- Login Page -->
+  <section id="loginPage" class="login-page">
+    <div class="login-layout">
+
+      <!-- Left Side -->
+      <div class="login-left">
+        <div class="login-content">
+
+          <div class="brand">
+            <h1>Velora Insights</h1>
+          </div>
+
+          <h2>Welcome Back</h2>
+          <p class="login-subtitle">
+            Enter your password to access the analytics dashboard.
+          </p>
+
+          <form id="loginForm" class="login-form">
+            <div class="form-group">
+              <input
+                type="email"
+                id="email"
+                value="demo@velora.com"
+                required
+              />
+            </div>
+
+            <div class="form-group">
+              <input
+                type="password"
+                id="password"
+                placeholder="Password"
+                required
+                autofocus
+              />
+            </div>
+
+            <p id="loginError" class="login-error"></p>
+
+            <button type="submit" class="login-button">Login</button>
+          </form>
+
+          <div class="demo-box">
+            <strong>Demo Access</strong>
+            <p>Email: demo@velora.com</p>
+            <p>Password: velora2026</p>
+          </div>
+
+          <div class="designer-credit">
+           <p>Designed by</p>
+          <strong>Ahmed ghroubi</strong>
+          </div>
+
+        </div>
+      </div>
+
+      <!-- Right Side -->
+      <div class="login-right">
+        <img src="login-image.jpg" alt="Office building" />
+      </div>
+
+    </div>
+  </section>
+<div id="dashboardPage" class="dashboard-page hidden">
+  <div class="dashboard-layout">
+
+    <!-- Sidebar -->
+    <aside class="sidebar">
+      <div class="sidebar-brand">
+        <div class="brand-square"></div>
+        <span>Velora</span>
+      </div>
+
+      <nav class="sidebar-nav">
+        <p class="sidebar-label">MAIN</p>
+        <a href="#" class="nav-item active">Dashboard</a>
+        <a href="#" class="nav-item">Analytics</a>
+        <a href="#" class="nav-item">Orders</a>
+        <a href="#" class="nav-item">Customers</a>
+        <a href="#" class="nav-item">Reports</a>
+
+        <p class="sidebar-label">MANAGEMENT</p>
+        <a href="#" class="nav-item">Products</a>
+        <a href="#" class="nav-item">Payments</a>
+        <a href="#" class="nav-item">Settings</a>
+      </nav>
+    </aside>
+
+    <!-- Main Area -->
+    <div class="dashboard-main">
+
+      <!-- Topbar -->
+      <header class="topbar">
+        <div>
+          <h1>Dashboard</h1>
+          <p>Welcome back to Velora Insights.</p>
+        </div>
+
+        <div class="topbar-right">
+          <input type="text" class="search-box" placeholder="Search" />
+          <button id="logoutBtn" class="logout-button">Logout</button>
+        </div>
+      </header>
+
+      <main class="dashboard-content">
+
+        <!-- Summary -->
+        <section class="summary-banner">
+          <div class="summary-item">
+            <h3>Total Sales</h3>
+            <p id="totalSales">€0</p>
+          </div>
+
+          <div class="summary-item">
+            <h3>Total Orders</h3>
+            <p id="totalOrders">0</p>
+          </div>
+
+          <div class="summary-item">
+            <h3>Average Order Value</h3>
+            <p id="averageOrder">€0</p>
+          </div>
+
+          <div class="summary-item">
+            <h3>Top Category</h3>
+            <p id="topCategory">-</p>
+          </div>
+        </section>
+
+        <!-- Filters -->
+        <section class="filter-section">
+          <div>
+            <h2>Sales Overview</h2>
+            <p>Use the filter to analyze sales by category.</p>
+          </div>
+
+          <div class="filter-controls">
+            <select id="categoryFilter">
+              <option value="all">All Categories</option>
+            </select>
+            <button id="resetFilterBtn">Reset</button>
+          </div>
+        </section>
+
+        <!-- Charts -->
+        <section class="charts">
+          <div class="chart-card">
+            <div class="card-header">
+              <h2>Monthly Sales Trend</h2>
+            </div>
+            <div class="chart-container">
+              <canvas id="monthlySalesChart"></canvas>
+            </div>
+          </div>
+
+          <div class="chart-card">
+            <div class="card-header">
+              <h2>Sales by Category</h2>
+            </div>
+            <div class="chart-container">
+              <canvas id="categorySalesChart"></canvas>
+            </div>
+          </div>
+        </section>
+
+        <!-- Bottom Grid -->
+        <section class="bottom-grid">
+          <div class="insights">
+            <h2>Key Business Insights</h2>
+            <ul id="insightsList"></ul>
+          </div>
+
+          <div class="quick-panel">
+            <h2>Quick Stats</h2>
+            <div class="quick-stat">
+              <span>Revenue Growth</span>
+              <strong>+18.4%</strong>
+            </div>
+            <div class="quick-stat">
+              <span>New Customers</span>
+              <strong>+245</strong>
+            </div>
+            <div class="quick-stat">
+              <span>Repeat Orders</span>
+              <strong>63%</strong>
+            </div>
+            <div class="quick-stat">
+              <span>Best Month</span>
+              <strong>December</strong>
+            </div>
+          </div>
+        </section>
+
+        <!-- Table -->
+        <section class="table-section">
+          <h2>Sales Data</h2>
+          <div class="table-wrapper">
+            <table>
+              <thead>
+                <tr>
+                  <th>Month</th>
+                  <th>Category</th>
+                  <th>Sales</th>
+                  <th>Orders</th>
+                </tr>
+              </thead>
+              <tbody id="salesTableBody"></tbody>
+            </table>
+          </div>
+        </section>
+
+      </main>
+    </div>
+  </div>
+</div>
+
+  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+  <script src="src/script.js"></script>
+</body>
+</html>
