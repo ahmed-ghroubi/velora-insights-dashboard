@@ -34,13 +34,24 @@ The dashboard uses a clean blue and white design to create a professional busine
 - Key business insights
 - Sales data table
 - Modern blue and white user interface
-
 ## Technologies Used
 
 - HTML
 - CSS
 - JavaScript
 - Chart.js
+
+## How to Run the Project
+
+This project is a frontend-only web application, so no backend server or installation is required.
+
+## Run with VS Code Live Server
+
+1. Open the project folder in VS Code.
+2. Install the **Live Server** extension if it is not already installed.
+3. Right-click `index.html`.
+4. Click **Open with Live Server**.
+5. The project will open in your browser.
 
 ## Demo Login
 
